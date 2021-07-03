@@ -14,6 +14,11 @@ function computerPlay() {
     return(randomCompChoice.toUpperCase());
 }
 
+function userPlay() {
+    let pick = prompt("Rock, Paper or Scissors?");
+    return (pick.toUpperCase());
+}
+
 // Plays one round of game
 // Adds point to either side
 // Returns winner or loser
@@ -58,8 +63,10 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-const playerSelection = "ROCK";
+const playerSelection = userPlay();
 const computerSelection = computerPlay();
+console.log(playerSelection);
+console.log("CPU chose: " + computerSelection);
 console.log(playRound(playerSelection, computerSelection));
-console.log(playerScore)
-console.log(compScore)
+console.log("You: " + playerScore)
+console.log("CPU: " + compScore)
