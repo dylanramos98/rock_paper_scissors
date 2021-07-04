@@ -63,10 +63,35 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-const playerSelection = userPlay();
-const computerSelection = computerPlay();
-console.log(playerSelection);
-console.log("CPU chose: " + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
-console.log("You: " + playerScore)
-console.log("CPU: " + compScore)
+function game() {
+    const playerSelection = userPlay();
+    const computerSelection = computerPlay();
+    console.log(playerSelection);
+    console.log("CPU chose: " + computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("You: " + playerScore);
+    console.log("CPU: " + compScore)
+}
+
+function finalScore() {
+    if (playerScore > compScore) {
+        console.log("You win!");
+    }  else {
+        if (playerScore === compScore) {
+            console.log("Tie game.");
+        }  else {
+            console.log("CPU wins.")
+        }
+    }
+}
+
+function fiveRound () {
+    game();
+    game();
+    game();
+    game();
+    game();
+    finalScore()
+}
+
+fiveRound()
